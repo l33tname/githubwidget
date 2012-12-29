@@ -1,0 +1,36 @@
+div.githubwidget
+{
+  padding: 4px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+
+div.githubwidget > p.githubwidgetHeader
+{
+    font-size: 40px;
+    padding:  0px;
+    margin: 0px;
+}
+
+div.githubwidget a
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+div.githubwidget a:hover
+{
+    text-decoration: underline;
+}
+
+div.githubwidget > table.githubwidgetTable
+{
+  
+}
+
+div.githubwidget > table.githubwidgetTable > tbody > tr > th
+{
+    text-align: left;
+    font-weight: bold;
+    padding-right: 8px;
+}
