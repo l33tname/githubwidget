@@ -15,7 +15,7 @@
 
     // Insert CSS & other JS
     $('head').append('<link rel="stylesheet" href="' + this.BASEPATH + '/css/githubwidget.css"><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome.css"><!--[if IE 7]><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome-ie7.css"><![endif]-->');
-    $('head').append('<script type="text/css" src="' + this.BASEPATH + '/js/jquery.dateFormat-1.0.js"></script>')
+    $('head').append('<script type="text/css" src="' + this.BASEPATH + '/js/jquery.dateFormat-1.0.js"></script>');
 
     // Do your awesome plugin stuff here
     $.ajax({
