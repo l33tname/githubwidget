@@ -4,9 +4,9 @@
   {
 
     // Config
-    this.BASEPATH = 'githubwidget';
+    this.BASEPATH = 'githubwidget';   // {BASEPATH} is the folder where the folders css, font and js for the widget are
 
-    // Settings
+    // Settings where were loaded from params
     this.settings = $.extend({
       user: '',
       name: '',
@@ -14,8 +14,10 @@
     }, options);
 
     // Insert CSS & other JS
+    //if ($('link[href*="githubwidget.css"').length > 0)
+    //{
     $('head').append('<link rel="stylesheet" href="' + this.BASEPATH + '/css/githubwidget.css"><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome.css"><!--[if IE 7]><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome-ie7.css"><![endif]-->');
-    $('head').append('<script type="text/css" src="' + this.BASEPATH + '/js/jquery.dateFormat-1.0.js"></script>')
+    //}
 
     // Do your awesome plugin stuff here
     $.ajax({
@@ -27,7 +29,7 @@
       {
         try
         {
-          $('.githubwidget').append(
+          $('<div class="githubwidget">' +
             '<p class="githubwidgetHeader"><a href="https://github.com/' + response.data.full_name + '"><i class="icon-github"></i> ' + response.data.name + '</a></p>' +
             '<table class="githubwidgetTable">' +
               '<tbody>' +
@@ -60,8 +62,8 @@
                       '</td>' +
                   '</tr>' +
               '</tbody>' +
-          '</table>'
-          );
+          '</table>' +
+          '</div>').appendTo($(this));
         }
         catch (e)
         {
@@ -80,7 +82,6 @@
     });
 
     // Return main-structure
-    return $(
-    '<div class="githubwidget"></div>').appendTo($(this));
+    return $('').appendTo($(this));
   };
 })(jQuery);
