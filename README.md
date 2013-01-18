@@ -38,3 +38,13 @@ The idea was to create a small widget, where some infos about a Github-Repositor
 	</body>
 </html>
 ```
+
+###Credits
+####The Font
+The Font Awesome font is licensed under the SIL Open Font License - http://scripts.sil.org/OFL
+Font Awesome CSS, LESS, and SASS files are licensed under the MIT License - http://opensource.org/licenses/mit-license.html
+The Font Awesome pictograms are licensed under the CC BY 3.0 License - http://creativecommons.org/licenses/by/3.0/
+Attribution is no longer required in Font Awesome 3.0, but much appreciated: "Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"
+####jQuery
+Dual licensed under the MIT and GPL licenses. https://github.com/jquery/jquery
+
