@@ -17,11 +17,7 @@
     //if ($('link[href*="githubwidget.css"').length > 0)
     //{
     $('head').append('<link rel="stylesheet" href="' + this.BASEPATH + '/css/githubwidget.css"><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome.css"><!--[if IE 7]><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome-ie7.css"><![endif]-->');
-<<<<<<< HEAD
     //}
-=======
-    $('head').append('<script type="text/css" src="' + this.BASEPATH + '/js/jquery.dateFormat-1.0.js"></script>');
->>>>>>> 16b66b3d0e5e429eafbc4860917ad6f20003693f
 
     // Do your awesome plugin stuff here
     $.ajax({
@@ -33,7 +29,7 @@
       {
         try
         {
-          $('<div class="githubwidget">' +
+          $(this).append('<div class="githubwidget">' +
             '<p class="githubwidgetHeader"><a href="https://github.com/' + response.data.full_name + '"><i class="icon-github"></i> ' + response.data.name + '</a></p>' +
             '<table class="githubwidgetTable">' +
               '<tbody>' +
@@ -67,7 +63,7 @@
                   '</tr>' +
               '</tbody>' +
           '</table>' +
-          '</div>').appendTo($(this));
+          '</div>'); //.appendTo($(this));
         }
         catch (e)
         {
@@ -86,6 +82,6 @@
     });
 
     // Return main-structure
-    return $('').appendTo($(this));
+    return $(this).append('Loading ...');
   };
 })(jQuery);
