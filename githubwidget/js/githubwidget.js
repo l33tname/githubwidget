@@ -13,24 +13,22 @@
       branch: 'master'
     }, options);
 
-    // Insert CSS & other JS
-    //if ($('link[href*="githubwidget.css"').length > 0)
-    //{
-    $('head').append('<link rel="stylesheet" href="' + this.BASEPATH + '/css/githubwidget.css"><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome.css"><!--[if IE 7]><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome-ie7.css"><![endif]-->');
-    //}
+    // Insert CSS
+    if ($('link[href*="githubwidget.css"]').length == 0)
+    {
+      $('head').append('<link rel="stylesheet" href="' + this.BASEPATH + '/css/githubwidget.css"><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome.css"><!--[if IE 7]><link rel="stylesheet" href="' + this.BASEPATH + '/css/font-awesome-ie7.css"><![endif]-->');
+    }
 
     // Do your awesome plugin stuff here
     $.ajax({
       url: 'https://api.github.com/repos/' + this.settings.user + '/' + this.settings.name,
       type: 'GET',
       data: {},
-      dataType: 'jsonp',
-      success: function (response)
-      {
-        try
-        {
-          $(this).append('<div class="githubwidget">' +
-            '<p class="githubwidgetHeader"><a href="https://github.com/' + response.data.full_name + '"><i class="icon-github"></i> ' + response.data.name + '</a></p>' +
+      context: this,
+      dataType: 'jsonp'
+    }).done(function ( response ) {
+      return $(this).append('<div class="githubwidget">' +
+            '<p class="githubwidgetHeader"><i class="icon-github"></i> <a href="https://github.com/' + response.data.full_name + '">' + response.data.name + '</a></p>' +
             '<table class="githubwidgetTable">' +
               '<tbody>' +
                   '<tr>' +
@@ -63,25 +61,8 @@
                   '</tr>' +
               '</tbody>' +
           '</table>' +
-          '</div>'); //.appendTo($(this));
-        }
-        catch (e)
-        {
-          console.log(e);
-        }
-
-      },
-      error: function (response)
-      {
-        if (console && console.log)
-        {
-          console.log('Request Error:', response);
-        }
-        console.log('Request Error:', response);
-      }
+          '</div>');
     });
 
-    // Return main-structure
-    return $(this).append('Loading ...');
   };
 })(jQuery);
