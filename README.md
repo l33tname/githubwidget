@@ -1,4 +1,4 @@
-##githubwidget
+#githubwidget
 
 ###Description
 
@@ -40,6 +40,9 @@ The idea was to create a small widget, where some infos about a Github-Repositor
 ```
 
 ###Credits
+
+Build by [@chefe]( https://github.com/chefe )
+
 ####The Font
 The Font Awesome font is licensed under the SIL Open Font License - http://scripts.sil.org/OFL
 Font Awesome CSS, LESS, and SASS files are licensed under the MIT License - http://opensource.org/licenses/mit-license.html
