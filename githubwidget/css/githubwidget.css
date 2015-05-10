@@ -23,11 +23,6 @@ div.githubwidget a:hover
     text-decoration: underline;
 }
 
-div.githubwidget > table.githubwidgetTable
-{
-  
-}
-
 div.githubwidget > table.githubwidgetTable > tbody > tr > th
 {
     text-align: left;
