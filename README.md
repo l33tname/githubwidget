@@ -11,7 +11,7 @@ The idea was to create a small widget, where some infos about a Github-Repositor
     *{BASEPATH} is the folder where the folders css, font and js for the widget are*
 3.  Include the JS-Script to your page
     <script type="text/javascript" src="githubwidget/js/githubwidget.js"></script>
-4.  After including, change a container into a widget. Set the username and de Repo-Name 
+4.  After including, change a container into a widget. Set the username and the Repo-Name 
 
 ```html
 <script type="text/javascript">
@@ -38,6 +38,14 @@ The idea was to create a small widget, where some infos about a Github-Repositor
 	</body>
 </html>
 ```
+
+Config options
+
+param name  | default value | optional
+user        | ''            | no
+name        | ''            | no
+titelmaxlen | -1 (meaning not truncated) | yes 
+branch:     |  'master'     | yes
 
 ###Credits
 
