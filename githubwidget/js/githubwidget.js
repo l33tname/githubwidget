@@ -1,7 +1,7 @@
 // the max len should be a config option
-function truncate_title( title ){
-  if (title.length >= 17) {
-    return title.substring(0, 17) + "...";
+function truncate_title( title, maxlen ){
+  if (maxlen != -1 && title.length >= maxlen) {
+    return title.substring(0, maxlen) + "...";
   };
   return title;
 }
@@ -9,7 +9,7 @@ function truncate_title( title ){
 // callback function for github api call
 function response_to_html ( response ) {
   return $(this).append('<div class="githubwidget">' +
-            '<p class="githubwidgetHeader"><i class="icon-github"></i> <a href="https://github.com/' + response.data.full_name + '">' + truncate_title( response.data.name ) + '</a></p>' +
+            '<p class="githubwidgetHeader"><i class="icon-github"></i> <a href="https://github.com/' + response.data.full_name + '">' + truncate_title( response.data.name, this.settings.titelmaxlen ) + '</a></p>' +
             '<table class="githubwidgetTable">' +
               '<tbody>' +
                   '<tr>' +
@@ -56,6 +56,7 @@ function response_to_html ( response ) {
     this.settings = $.extend({
       user: '',
       name: '',
+      titelmaxlen: -1,
       branch: 'master'
     }, options);
 
