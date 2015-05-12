@@ -39,13 +39,14 @@ The idea was to create a small widget, where some infos about a Github-Repositor
 </html>
 ```
 
-Config options
+###Config options
 
-param name  | default value | optional
-user        | ''            | no
-name        | ''            | no
-titelmaxlen | -1 (meaning not truncated) | yes 
-branch:     |  'master'     | yes
+|param name  | default value              | optional  |  
+|------------|----------------------------|-----------|
+|user        | ''                         | no        |
+|name        | ''                         | no        |
+|titelmaxlen | -1 (meaning not truncated) | yes       |
+|branch      |  'master'                  | yes       |
 
 ###Credits
 
